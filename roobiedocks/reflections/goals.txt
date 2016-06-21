@@ -1,0 +1,3 @@
+# Goals
+
+I am working towards being a senior-level developer. I would like to dedicate my work towards solving problems that benefit society in some meaningful way. I realize this sounds vague, and the reason is because I don't know what it will be. I just know that the more I learn, the more I can help, and as a consequence more doors open up. Eventually I will find meaningful projects, or possibly they will find me. Learning Ruby is just one step along the path... Woah, that was deep!

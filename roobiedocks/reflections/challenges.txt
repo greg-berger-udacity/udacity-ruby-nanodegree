@@ -1,0 +1,7 @@
+# Challenges
+
+One of the biggest challenges for learning a new programming language is coming up with projects to do as practice, which is one of the reasons why Udacity is so great! I've had a decent amount of exerpience coding, so I would like to know what are some ways I can go above and beyond for each project?
+
+Also, I still don't really know the breadth of what Ruby does. Meaning, what are some common applications for Ruby? Where in the stack is it?
+
+Thank you for your time!

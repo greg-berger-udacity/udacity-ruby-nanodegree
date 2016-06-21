@@ -1,0 +1,5 @@
+# Transferable Skills
+
+Here are two skills that should come in handy during my RubyND experience:
+* Understanding of, and experience in Full Stack Web Development
+* Solid understanding of Object Oriented Design (OOP)
