@@ -26,22 +26,22 @@ code = "M.E?CIQN E?RS, D?NA EQC,IN S,,I Z?TQAM,"
 # ========================
 
 # 0. Remove the first character in the code
-code = code[1...code.length]
+code.slice!(0)
 
-# 1. Insert the string "A EW? O" at the code's 11th position.
-code = code[0...11] + "A EW?" + code[12...code.length]
+# 1. Insert the string "A EW? O" at the code's 11th position. Is there a better way?
+code[11] = "A EW?"
 
 # 2. Remove all instances of the characters 'Q', '?', and ','.
-code = code.tr("Q?,", "")
+code.tr!("Q?,", "")
 
 # 3. STOP SHOUTING. Make the entire code lowercase, for now.
-code = code.downcase
+code.downcase!
 
 # 4. Reverse the order of the characters in the code.
-code = code.reverse
+code.reverse!
 
 # 5. Capitalize the first letter of the code.
-code = code.capitalize
+code.capitalize!
 
 # 6. `puts` the code to reveal the message.
 puts code
