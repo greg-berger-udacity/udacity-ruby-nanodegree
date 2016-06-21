@@ -28,7 +28,7 @@ code = "M.E?CIQN E?RS, D?NA EQC,IN S,,I Z?TQAM,"
 # 0. Remove the first character in the code
 code.slice!(0)
 
-# 1. Insert the string "A EW? O" at the code's 11th position. Is there a better way?
+# 1. Insert the string "A EW? O" at the code's 11th position. 
 code[11] = "A EW?"
 
 # 2. Remove all instances of the characters 'Q', '?', and ','.
