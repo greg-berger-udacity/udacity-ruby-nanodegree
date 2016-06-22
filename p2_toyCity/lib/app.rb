@@ -42,23 +42,26 @@ products_hash['items'].each do |item|
     
     # Do Brand stuff
     unless brands.has_key?(item['brand'])
-	brands[item['brand']] = Hash.new
+	    puts "New item: " + item['brand']
+	    brands[item['brand']] = Hash.new
 
-	# Count and print the number of the brand's toys we stock
-	brands[item['brand']]['Number of toys'] = 1
+	    # Count and print the number of the brand's toys we stock
+	    brands[item['brand']]['Number of toys in stock'] = item['stock']
+	    brands[item['brand']]['Number of Unique Toys'] = 1
 
-	# Calculate the average total retail of all the brand's toys
-	brands[item['brand']]['Retail Total'] = Float(item['full-price'])
+	    # Calculate the average total retail of all the brand's toys
+	    brands[item['brand']]['Retail Total'] = Float(item['full-price'])
 
-	# Calculate the total revenue of all the brand's toy sales combined
-	brands[item['brand']]['Revenue'] = revenue
+	    # Calculate the total revenue of all the brand's toy sales combined
+	    brands[item['brand']]['Revenue'] = revenue
     else
-	brands[item['brand']]['Number of toys'] += 1
-	brands[item['brand']]['Retail Total'] += Float(item['full-price'])
-	brands[item['brand']]['Revenue'] += revenue
+	    brands[item['brand']]['Number of toys in stock'] += item['stock']
+	    brands[item['brand']]['Number of Unique Toys'] += 1
+	    brands[item['brand']]['Retail Total'] += Float(item['full-price'])
+	    brands[item['brand']]['Revenue'] += revenue
     end
 
-    puts ""
+    puts "" # Formatting
 
 end # end product_has.each
 
@@ -76,10 +79,10 @@ brands.each do |key, value|
     puts "Name: " + key
 
     # Print the number of the brand's toys we stock
-    puts "Toys we stock: " + value['Number of toys'].to_s
+    puts "Toys we stock: " + value['Number of toys in stock'].to_s
 
     # Calculate and print the average price of the brand's toys
-    puts "Average Price: $" + (value['Retail Total'] / value['Number of toys']).round(2).to_s
+    puts "Average Price: $" + (value['Retail Total'] / value['Number of Unique Toys']).round(2).to_s
 
     # Calculate and print the total revenue of all the brand's toy sales combined
     # Prints are on two lines because I kept getting a MethodError saying Float doesn't have to_s
