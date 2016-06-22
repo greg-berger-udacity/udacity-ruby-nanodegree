@@ -30,10 +30,7 @@ products_hash['items'].each do |item|
     puts "# of Purchases: " + item['purchases'].size.round.to_s
     
     # Calculate and print the average price the toy sold for
-    revenue = 0.0
-    item['purchases'].each do |p|
-	revenue += p['price']
-    end
+    revenue = item["purchases"].inject(0) { |total, purchase| total + purchase["price"] }
     avg_price = revenue / item['purchases'].size
     puts "Average Sale Price: $" + avg_price.round(2).to_s
     
