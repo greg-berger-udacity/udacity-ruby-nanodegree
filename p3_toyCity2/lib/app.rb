@@ -20,6 +20,8 @@ def setup_files
 end
 
 def create_report
+  print_sales_report_header
+
   print_products_header
   $products['items'].each do |p|
     do_product(p)
@@ -56,6 +58,7 @@ def do_product(item)
 
 end # do_product
 
+# Fill in all info in global $brands variable
 def parse_brand_info()
   $brands = Hash.new
   $products['items'].each do |item|
@@ -80,6 +83,7 @@ def parse_brand_info()
   end
 end # end parse_brand_info
 
+# Print all info for brand
 def do_brand(key, value)
   # Print the name of the brand
   output("Name: " + key)
@@ -97,6 +101,10 @@ def do_brand(key, value)
   output("")
 
 end # end do_brand
+
+def print_sales_report_header
+  output "**** Sales Report ****"
+end
 
 def print_products_header
   output "                     _            _       "
