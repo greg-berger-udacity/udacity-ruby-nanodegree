@@ -24,39 +24,40 @@ def create_report
 
   print_products_header
   $products['items'].each do |p|
-    do_product(p)
+    result = calculate_product(p)
+    print_product(result)
   end
   
   print_brands_header
   parse_brand_info
   $brands.each do |key, value|
-    do_brand(key, value)
+    print_brand(key, value)
   end
 end
 
-# print all info for a products
-def do_product(item)
-  # Print the name of the toy
-  output("Name: " + item['title'])
+def calculate_product(p)
+  result = Hash.new
 
-  # Print the retail price of the toy
-  output("Retail: $" + item['full-price'])
+  result['Name'] = p['title']
+  result['Retail'] = p['full-price']
+  result['Total Sales'] = p["purchases"].inject(0) { |total, purchase| total + purchase['price']}
+  p['revenue'] = result['Total Sales'] # used in parse_brand_info
+  result['Total Purchases'] = p['purchases'].size
+  result['Average Sale'] = result['Total Sales'] / result['Total Purchases']
+  result['Average Discount'] = ( (Float(p['full-price']) - result['Average Sale']) * 100 / Float(p['full-price']) ).round(1)
+  
+  return result
+end
 
-  # Print the total number of purchases
-  output("# of Purchases: " + item['purchases'].size.round.to_s)
-
-  # Print the average price the toy sold for
-  revenue = item["purchases"].inject(0) { |total, purchase| total + purchase['price']}  
-  item["revenue"] = revenue
-  avg_price = revenue / item['purchases'].size
-  output("Average Sale Price: $" + avg_price.round(2).to_s)
-
-  # Print the average discount (% or $) based off the average sales
-  output("Average Discount: " + ((Float(item['full-price']) - avg_price) * 100 / Float(item['full-price'])).round(1).to_s + "%")
-
+def print_product(p)
+  output("Name: " + p['Name'])
+  output("Retail: " + p['Retail'])
+  output("Total Sales: $" + p['Total Sales'].to_s)
+  output("Total Purchases: " + p['Total Purchases'].to_s)
+  output("Average Sale: $" + p['Average Sale'].to_s)
+  output("Average Discount: " + p['Average Discount'].to_s + "%")
   output("") # formatting
-
-end # do_product
+end
 
 # Fill in all info in global $brands variable
 def parse_brand_info()
@@ -78,13 +79,15 @@ def parse_brand_info()
       $brands[item['brand']]['Number of toys in stock'] += item['stock']
       $brands[item['brand']]['Number of Unique Toys'] += 1
       $brands[item['brand']]['Retail Total'] += Float(item['full-price'])
-      $brands[item['brand']]['Revenue'] += item['revenue']
+      $brands[item['brand']]['Revenue'] += item['revenue'].round(2)
     end
-  end
+    # Calculate Average Price
+    $brands[item['brand']]['Average Price'] = ($brands[item['brand']]['Retail Total'] / $brands[item['brand']]['Number of Unique Toys']).round(2)
+  end # end each product
 end # end parse_brand_info
 
 # Print all info for brand
-def do_brand(key, value)
+def print_brand(key, value)
   # Print the name of the brand
   output("Name: " + key)
 
@@ -92,7 +95,7 @@ def do_brand(key, value)
   output("Toys we stock: " + value['Number of toys in stock'].to_s)
 
   # Calculate and print the average price of the brand's toys
-  output("Average Price: $" + (value['Retail Total'] / value['Number of Unique Toys']).round(2).to_s)
+  output("Average Price: $" + value['Average Price'].to_s)
 
   # Calculate and print the total revenue of all the brand's toy sales combined
   # Prints are on two lines because I kept getting a MethodError saying Float doesn't have to_s
@@ -102,8 +105,16 @@ def do_brand(key, value)
 
 end # end do_brand
 
+# ASCII art courtesy of Udacity reviewer
 def print_sales_report_header
-  output "**** Sales Report ****"
+  output "  #####                                 ######"
+  output " #     #   ##   #      ######  ####     #     # ###### #####   ####  #####  #####"
+  output " #        #  #  #      #      #         #     # #      #    # #    # #    #   #"
+  output "  #####  #    # #      #####   ####     ######  #####  #    # #    # #    #   #"
+  output "       # ###### #      #           #    #   #   #      #####  #    # #####    #"
+  output " #     # #    # #      #      #    #    #    #  #      #      #    # #   #    #"
+  output "  #####  #    # ###### ######  ####     #     # ###### #       ####  #    #   #"
+  output "********************************************************************************"
 end
 
 def print_products_header
