@@ -1,0 +1,4 @@
+# New Features
+1. Due Date: represents the date at which the task should be completed.
+2. Project: represents a project that the task belongs to.
+3. Context: represents the context in which this task relates to, for example: "School" can be used to categorize tasks that are school related.
