@@ -18,10 +18,10 @@ class TodoList
     @items.delete_at(index)
   end
 
-  def mark_complete_on_item(id)
+  def toggle_complete_on_item(id)
     @items.each do |item|
       if item.id == id
-        item.isComplete = true
+        item.isComplete = !item.isComplete # toggle
       end
     end
   end
@@ -29,7 +29,7 @@ class TodoList
   def print_list
     puts "******** #{@title} Tasks ********"
     @items.each do |item|
-      puts "Task ID: #{item.id}\nDescription: #{item.description}\nProject: #{item.project}\nContext: #{item.context}\nDue: #{item.due_date}\nComplete? #{item.isComplete}\n\n"
+      item.print
     end
   end
 
@@ -37,7 +37,7 @@ class TodoList
     puts "******** #{@title} Tasks by Project: #{project} ********"
     @items.each do |item|
       if item.project == project
-        puts "Task ID: #{item.id}\nDescription: #{item.description}\nProject: #{item.project}\nContext: #{item.context}\nDue: #{item.due_date}\nComplete? #{item.isComplete}\n\n"
+        item.print
       end
     end
   end
@@ -46,7 +46,7 @@ class TodoList
     puts "******** #{@title} Tasks by Context: #{context} ********"
     @items.each do |item|
       if item.context == context
-        puts "Task ID: #{item.id}\nDescription: #{item.description}\nProject: #{item.project}\nContext: #{item.context}\nDue: #{item.due_date}\nComplete? #{item.isComplete}\n\n"
+        item.print
       end
     end
   end
@@ -64,6 +64,10 @@ class Item
     @project = project
     @context = context
     @isComplete = false
+  end
+
+  def print
+      puts "Task ID: #{@id}\nDescription: #{@description}\nProject: #{@project}\nContext: #{@context}\nDue: #{@due_date}\nComplete? #{@isComplete}\n\n"
   end
 
 end

@@ -35,7 +35,7 @@ todo_list.delete_item_at(0)
 todo_list.print_list
 
 # Update the completion status of the first item to complete
-todo_list.mark_complete_on_item(2)
+todo_list.toggle_complete_on_item(2)
 
 # Print the list
 todo_list.print_list
