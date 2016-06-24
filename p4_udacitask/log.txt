@@ -1,0 +1,131 @@
+commit 6f118e47ae9dece6fb6e777632c5bddfb6646af8
+Author: Greg Berger <grberger@usc.edu>
+Date:   Fri Jun 24 14:10:41 2016 -0700
+
+    Refactored the print methods
+
+commit 6a3a304bdc66ee0f6b0b3138fa79f75653ea894f
+Author: Greg Berger <grberger@usc.edu>
+Date:   Fri Jun 24 14:04:29 2016 -0700
+
+    Finished project and context features
+
+commit 3addf2d419e662171d2b6a9f9098ce43c2b47e6b
+Author: Greg Berger <grberger@usc.edu>
+Date:   Fri Jun 24 13:01:42 2016 -0700
+
+    Added new_features.txt file
+
+commit 5ce4afa2b31ea344e110a9bb2c64ff67339b16a3
+Author: Greg Berger <grberger@usc.edu>
+Date:   Fri Jun 24 12:58:34 2016 -0700
+
+    Initial p4 commit. Finished walkthrough code
+
+commit d3729306cd85bd0d8b33f74d4a7319e6ae9319ba
+Author: Greg Berger <grberger@usc.edu>
+Date:   Fri Jun 24 10:56:26 2016 -0700
+
+    Final commit for p3
+
+commit b0e90555baeba7524ee43ecd77330dea449ad328
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 16:26:12 2016 -0700
+
+    Fixed issues from first review. Code is refactored into monofunctional methods. Fancy terminology...
+
+commit 9570b13707776ebf5f5114126b0be450441e9452
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 12:35:52 2016 -0700
+
+    Added git log file
+
+commit 669478067195c3783977037a9301616bce86e5ea
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 12:33:12 2016 -0700
+
+    Added comments and report header
+
+commit 964e2b2a5e195af085e5902708f4b6d0ae4897af
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 12:27:43 2016 -0700
+
+    Initial commit - almost done with it though.
+
+commit add3f0349494dad0f12d0da818a71cb40b37f3d4
+Author: Greg Berger <grberger@usc.edu>
+Date:   Wed Jun 22 14:33:23 2016 -0700
+
+    Used inject as a for loop
+
+commit 8933e61bfd5d6b32c9eb3bc845e351475165b2dd
+Author: Greg Berger <grberger@usc.edu>
+Date:   Wed Jun 22 14:28:54 2016 -0700
+
+    Fixed a logic error that printed out the wrong values
+
+commit 786fe03c7d1e36613a5ccef402d5015d62fa0e0f
+Author: Greg Berger <grberger@usc.edu>
+Date:   Tue Jun 21 19:16:27 2016 -0700
+
+    Completed toyCity. Submission 1 about to go down...
+
+commit f8553b2abfeb97a3f57a5a7f02415f9052a91c66
+Author: Greg Berger <grberger@usc.edu>
+Date:   Tue Jun 21 16:16:17 2016 -0700
+
+    Init ToyCity commit
+
+commit f1669691db5354370c1f13bee39165e2f7532a7b
+Author: Greg Berger <grberger@usc.edu>
+Date:   Tue Jun 21 16:13:32 2016 -0700
+
+    Moved roobidocks to a new dir
+
+commit 67ff1ffcfbd1733cee9225bd4b4db3399a561601
+Author: Greg Berger <grberger@usc.edu>
+Date:   Tue Jun 21 01:14:21 2016 -0700
+
+    Now output the correct value. Was an issue with step 1
+
+commit 17cd041f1fed3a8d6582d296aa1fe20e4cd242db
+Author: Greg Berger <grberger@usc.edu>
+Date:   Mon Jun 20 23:08:06 2016 -0700
+
+    Removed comment
+
+commit f56d81eeae2a159fec0f46441c0b8c73b00a3adc
+Author: Greg Berger <grberger@usc.edu>
+Date:   Mon Jun 20 23:04:45 2016 -0700
+
+    Added reflection txt docs
+
+commit 6f4402e2f57a84357ac458d42c25d747803768fe
+Author: Greg Berger <grberger@usc.edu>
+Date:   Mon Jun 20 22:44:16 2016 -0700
+
+    Made the string manipulation cleaner
+
+commit d90677e2cbf362d95275668d7fce4c5c81b34241
+Author: Greg Berger <gregrberger@yahoo.com>
+Date:   Mon Jun 20 22:30:16 2016 -0700
+
+    Update README.md
+
+commit d545645012183fd78908cb63653f2b9e95188eea
+Author: Greg Berger <gregrberger@yahoo.com>
+Date:   Mon Jun 20 22:29:51 2016 -0700
+
+    Update README.md
+
+commit 50d2210057e375adae430507923be30792f7f632
+Author: Greg Berger <grberger@usc.edu>
+Date:   Mon Jun 20 22:25:24 2016 -0700
+
+    Completed First project, Roobiedocks Code Breaker
+
+commit ea9bb871e7d44258d6ab3263ce8cbc2f97535dad
+Author: Greg Berger <gregrberger@yahoo.com>
+Date:   Mon Jun 20 17:11:26 2016 -0700
+
+    Initial commit
