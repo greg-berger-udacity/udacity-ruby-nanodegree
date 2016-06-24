@@ -1,3 +1,15 @@
+commit b0e90555baeba7524ee43ecd77330dea449ad328
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 16:26:12 2016 -0700
+
+    Fixed issues from first review. Code is refactored into monofunctional methods. Fancy terminology...
+
+commit 9570b13707776ebf5f5114126b0be450441e9452
+Author: Greg Berger <grberger@usc.edu>
+Date:   Thu Jun 23 12:35:52 2016 -0700
+
+    Added git log file
+
 commit 669478067195c3783977037a9301616bce86e5ea
 Author: Greg Berger <grberger@usc.edu>
 Date:   Thu Jun 23 12:33:12 2016 -0700
