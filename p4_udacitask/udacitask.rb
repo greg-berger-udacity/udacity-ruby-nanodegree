@@ -40,6 +40,9 @@ todo_list.toggle_complete_on_item(2)
 # Print the list
 todo_list.print_list
 
+# Print Empty project, this tests the is_project_complete? function
+todo_list.print_list_by_project("Get Fit")
+
 # Update the title of the list
 todo_list.title = "Udacitask 2.0"
 

@@ -1,8 +1,8 @@
 require 'date'
 
 class TodoList
-  attr_reader :title, :items
-  attr_writer :title
+  attr_reader :items
+  attr_accessor :title
 
   def initialize(title)
     @title = title
@@ -19,11 +19,8 @@ class TodoList
   end
 
   def toggle_complete_on_item(id)
-    @items.each do |item|
-      if item.id == id
-        item.isComplete = !item.isComplete # toggle
-      end
-    end
+    item_to_change = @items.find { |item| item.id == id }
+    item_to_change.toggle_complete if !item_to_change.nil?
   end
 
   def print_list
@@ -34,11 +31,15 @@ class TodoList
   end
 
   def print_list_by_project(project)
-    puts "******** #{@title} Tasks by Project: #{project} ********"
-    @items.each do |item|
-      if item.project == project
-        item.print
+    unless is_project_complete? project
+      puts "******** #{@title} Tasks by Project: #{project} ********"
+      @items.each do |item|
+        if item.project == project
+          item.print
+        end
       end
+    else
+      puts "******** #{@title}: No tasks remain for Project #{project} ********\n\n"
     end
   end
   
@@ -51,11 +52,16 @@ class TodoList
     end
   end
 
+  def is_project_complete?(project)
+    active_item = @items.find { |item| item.project == project }
+    return !active_item.nil?
+  end
+
 end
 
 class Item
-  attr_reader :id, :description, :isComplete, :due_date, :project, :context
-  attr_writer :isComplete
+  attr_reader :id, :description, :due_date, :project, :context
+  attr_accessor :isComplete
   
   def initialize(id, description, due_date, project, context)
     @id = id
@@ -68,6 +74,10 @@ class Item
 
   def print
       puts "Task ID: #{@id}\nDescription: #{@description}\nProject: #{@project}\nContext: #{@context}\nDue: #{@due_date}\nComplete? #{@isComplete}\n\n"
+  end
+
+  def toggle_complete
+    @isComplete = !@isComplete
   end
 
 end
